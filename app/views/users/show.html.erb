@@ -1,0 +1,21 @@
+<h1> Hello <%= @user.email %>!</h1>
+
+<!--  FIX THIS!!
+<form>
+  <input <%# button_to "Logout", session_url, method :delete %> >
+</form>
+ -->
+
+ <form action="<%= session_url  %>" method="POST">
+   <input type="hidden" name="_method" value="DELETE">
+
+   <input
+   type="hidden"
+   name="authenticity_token"
+   value="<%= form_authenticity_token %>">
+
+   <input
+   type="submit"
+   value="Logout">
+ </input>
+</form>
