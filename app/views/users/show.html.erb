@@ -1,21 +1,9 @@
 <h1> Hello <%= @user.email %>!</h1>
 
-<!--  FIX THIS!!
-<form>
-  <input <%# button_to "Logout", session_url, method :delete %> >
-</form>
- -->
+<%= button_to "Logout", session_url, method: :delete %>
+<br>
 
- <form action="<%= session_url  %>" method="POST">
-   <input type="hidden" name="_method" value="DELETE">
+<a href="<%= bands_url %>"> View Bands </a>
+<br>
 
-   <input
-   type="hidden"
-   name="authenticity_token"
-   value="<%= form_authenticity_token %>">
-
-   <input
-   type="submit"
-   value="Logout">
- </input>
-</form>
+<a href="<%=new_band_url%>"> Enter a new band </a>
